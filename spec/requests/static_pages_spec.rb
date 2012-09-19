@@ -1,6 +1,7 @@
 require 'spec_helper'
 
 describe "StaticPages" do
+  let(:common){"Ruby on Rails Tutorial Sample App"}
   describe "Test home" do
     it "test static_pages/home" do
       visit '/static_pages/home' 
@@ -8,7 +9,7 @@ describe "StaticPages" do
     end
     it "test title on static_pages/home" do
       visit '/static_pages/home' 
-      page.should have_selector("title", text: "| Home")
+      page.should have_selector("title", text: "#{common} | Home")
     end
   end
   describe "Test help" do
